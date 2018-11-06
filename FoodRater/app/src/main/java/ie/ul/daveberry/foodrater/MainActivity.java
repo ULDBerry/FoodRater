@@ -20,14 +20,19 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView = findViewById(R.id.recycler_view);
     recyclerView.setLayoutManager(new LinearLayoutManager(this));
     recyclerView.setHasFixedSize(true);
+    final FoodAdapter foodAdapter = new FoodAdapter();
+    recyclerView.setAdapter(foodAdapter);
 
+    foodAdapter.addFood();
+    foodAdapter.addFood();
+    foodAdapter.addFood();
 
 
     FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
     fab.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-
+        foodAdapter.addFood();
       }
     });
   }
